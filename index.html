@@ -292,6 +292,193 @@
 
 
   
+    <article id="post-隔离级别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/05/%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB/">隔离级别</a>
+    </h1>
+  
+
+        
+        <a href="/2020/06/05/%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB/" class="archive-article-date">
+  	<time datetime="2020-06-05T10:13:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="脏读、幻读和不可重复读"><a href="#脏读、幻读和不可重复读" class="headerlink" title="脏读、幻读和不可重复读"></a>脏读、幻读和不可重复读</h2><ul>
+<li>脏读取（Dirty Read）</li>
+</ul>
+<p>一个事务开始读取了某行数据，但是另外一个事务已经更新了此数据但没有能够及时提交，这就出现了脏读取。</p>
+<p><img src="F:%5Cblog%5Cthemes%5Cyilia%5Csource%5Cimg%5CZD.png" alt=""></p>
+<ul>
+<li><p>不可重复读（Non-repeatable Read） </p>
+<p>在同一个事务中，同一个读操作对同一个数据的前后两次读取产生了不同的结果，这就是不可重复读。</p>
+<p><img src="F:%5Cblog%5Cthemes%5Cyilia%5Csource%5Cimg%5CBKCFD.png" alt=""></p>
+</li>
+<li><p>幻像读（Phantom Read）    </p>
+<p>幻像读是指在同一个事务中以前没有的行，由于其他事务的提交而出现的新行。</p>
+<p><img src="F:%5Cblog%5Cthemes%5Cyilia%5Csource%5Cimg%5CHD.png" alt=""></p>
+</li>
+</ul>
+<h2 id="MySQL-数据隔离级别"><a href="#MySQL-数据隔离级别" class="headerlink" title="MySQL 数据隔离级别"></a>MySQL 数据隔离级别</h2><ul>
+<li>读未提交（READ UMCOMMITTED） </li>
+</ul>
+<p>​     允许一个事务可以看到其他事务未提交的修改。</p>
+<ul>
+<li>读已提交（READ COMMITTED） </li>
+</ul>
+<p>​     允许一个事务只能看到其他事务已经提交的修改，未提交的修改是不可见的。</p>
+<ul>
+<li>可重复读（REPEATABLE READ） </li>
+</ul>
+<p>​     确保如果在一个事务中执行两次相同的SELECT语句，都能得到相同的结果，不管其他事务是否提交这些修改。 （银行总账）</p>
+<p>​    该隔离级别为InnoDB的默认设置。</p>
+<ul>
+<li>串行化（SERIALIZABLE） 【序列化】</li>
+</ul>
+<p>​     将一个事务与其他事务完全地隔离。</p>
+<p>不同事务隔离级别有不同的效果：</p>
+<p><img src="img%5Cgelijibie.png" alt=""></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MySQL</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/06/05/%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-事务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/05/%E4%BA%8B%E5%8A%A1/">事务</a>
+    </h1>
+  
+
+        
+        <a href="/2020/06/05/%E4%BA%8B%E5%8A%A1/" class="archive-article-date">
+  	<time datetime="2020-06-05T09:37:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1、事务是什么      </p>
+<p>​        事务是应用程序中一系列严密的操作，所有操作必须成功完成，否则在每个操作中所作的所有更改都会被撤消。也就是事务具有原子性，一个事务中的一系列的操作要么全部成功，要么一个都不做。</p>
+<p>2、事务的四大特性 </p>
+<p>数据库事务 transanction 正确执行的四个基本要素。ACID,原子性(Atomicity)、一致性(Correspondence)、隔离性(Isolation)、持久性(Durability)。</p>
+<pre><code>（1）原子性：整个事务中的所有操作，要么全部完成，要么全部不完成，不可能停滞在中间某个环节。事务在执行过程中发生错误，会被回滚（Rollback）到事务开始前的状态，就像这个事务从来没有执行过一样。
+（2）一致性：在事务开始之前和事务结束以后，数据库的完整性约束没有被破坏。
+ （3）隔离性：隔离状态执行事务，使它们好像是系统在给定时间内执行的唯一操作。如果有两个事务，运行在相同的时间内，执行 相同的功能，事务的隔离性将确保每一事务在系统中认为只有该事务在使用系统。这种属性有时称为串行化，为了防止事务操作间的混淆，  必须串行化或序列化请 求，使得在同一时间仅有一个请求用于同一数据。
+（4）持久性：在事务完成以后，该事务所对数据库所作的更改便持久的保存在数据库之中，并不会被回滚。</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MySQL</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/06/05/%E4%BA%8B%E5%8A%A1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-基于UBUNTU搭建路由器-开启热点" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -645,6 +832,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
               </li>
              
               <li class="article-tag-list-item">
