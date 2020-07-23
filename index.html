@@ -316,15 +316,17 @@
 <li>脏读取（Dirty Read）</li>
 </ul>
 <p>一个事务开始读取了某行数据，但是另外一个事务已经更新了此数据但没有能够及时提交，这就出现了脏读取。</p>
-<p><img src="F:%5Cblog%5Cthemes%5Cyilia%5Csource%5Cimg%5CZD.png" alt=""></p>
+<p>​       <img src="/img/ZD.png" alt=""></p>
 <ul>
 <li><p>不可重复读（Non-repeatable Read） </p>
 <p>在同一个事务中，同一个读操作对同一个数据的前后两次读取产生了不同的结果，这就是不可重复读。</p>
-<p><img src="F:%5Cblog%5Cthemes%5Cyilia%5Csource%5Cimg%5CBKCFD.png" alt=""></p>
+<p><img src="/img/BKCFD.png" alt=""></p>
 </li>
+</ul>
+<ul>
 <li><p>幻像读（Phantom Read）    </p>
 <p>幻像读是指在同一个事务中以前没有的行，由于其他事务的提交而出现的新行。</p>
-<p><img src="F:%5Cblog%5Cthemes%5Cyilia%5Csource%5Cimg%5CHD.png" alt=""></p>
+<p><img src="/img/HD.png" alt=""></p>
 </li>
 </ul>
 <h2 id="MySQL-数据隔离级别"><a href="#MySQL-数据隔离级别" class="headerlink" title="MySQL 数据隔离级别"></a>MySQL 数据隔离级别</h2><ul>
@@ -345,7 +347,7 @@
 </ul>
 <p>​     将一个事务与其他事务完全地隔离。</p>
 <p>不同事务隔离级别有不同的效果：</p>
-<p><img src="img%5Cgelijibie.png" alt=""></p>
+<p><img src="/img/gelijibie.png" alt=""></p>
 
       
 
