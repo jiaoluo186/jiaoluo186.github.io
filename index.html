@@ -130,6 +130,100 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-链表有环问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/03/%E9%93%BE%E8%A1%A8%E6%9C%89%E7%8E%AF%E9%97%AE%E9%A2%98/">链表有环问题</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/03/%E9%93%BE%E8%A1%A8%E6%9C%89%E7%8E%AF%E9%97%AE%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2020-07-03T07:38:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="判断链表有环"><a href="#判断链表有环" class="headerlink" title="判断链表有环"></a>判断链表有环</h2><p>快慢指针的方法，即设置两个指针，一个为slow，一个为fast，从头开始对链表进行扫描。</p>
+<ul>
+<li>指针slow<strong>每次走一步</strong>，指针fast<strong>每次走两步</strong>。</li>
+<li>如果存在环，则这两个指针<strong>一定会相遇</strong>。</li>
+<li>如果不存在环，则fast指针会最先到达NULL而退出。</li>
+</ul>
+<p>为何说二者一定相遇？因为fast会先进入环，在slow进入之后，如果把slow看做在前面，则fast在后面每次循环都会向slow靠近1，所以一定会相遇，而不会出现fast直接跳过slow的情况。</p>
+<h2 id="如何求环中单链表的环长"><a href="#如何求环中单链表的环长" class="headerlink" title="如何求环中单链表的环长"></a>如何求环中单链表的环长</h2><p>当快慢指针在环上相遇后，记录第一次相遇点为Pos，之后指针slow继续每次走一步，指针fast每次走两步</p>
+<p><strong>在下次相遇时，fast比slow正好多走了一圈，即多走的距离正好等于环长</strong>。</p>
+<p><img src="/img/huan1.png" alt=""></p>
+<p>设从第一次相遇到第二次相遇，设slow走了<strong>len</strong>步，则fast走了<strong>2*len</strong>步，相遇时多走了一圈：</p>
+<ul>
+<li>环长 = 2*len - len</li>
+</ul>
+<h2 id="如何求有环链表中的环连接点的位置"><a href="#如何求有环链表中的环连接点的位置" class="headerlink" title="如何求有环链表中的环连接点的位置"></a>如何求有环链表中的环连接点的位置</h2><p><img src="/img/huan2.png" alt=""></p>
+<p>对于这个问题，第一次碰撞点Pos到连接点Join的距离 = 头结点到连接点Join的距离。</p>
+<p>因此，分别从第一次碰撞点Pos、头指针head开始走，相遇的那个点就是连接点。</p>
+<p>在环上相遇后，记录第一次相遇点为Pos，连接点为Join，假设头结点到连接点的长度为LenA，连接点到第一次相遇点的长度为x，环长为R。</p>
+<p>第一次相遇时，slow走的长度S = LenA + x;<br>第一次相遇时，fast走的长度2S = LenA + n * R + x；<br>因此，LenA + x = n * R;　　故LenA = n * R -x;</p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line"></span><br><span class="line">using  namespace std;</span><br><span class="line"></span><br><span class="line">struct Node &#123;</span><br><span class="line">	int val;</span><br><span class="line">	Node* next;</span><br><span class="line">	Node(int num):val(num),next(nullptr)&#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;创建环链表</span><br><span class="line">Node* CreatCircularList() &#123;</span><br><span class="line">	Node* head &#x3D; new Node(0);</span><br><span class="line">	Node* ptr &#x3D; head, *enterNode &#x3D; nullptr;</span><br><span class="line">	cout &lt;&lt; &quot;Please input a number(0 to entry node, q to quit): &quot;;</span><br><span class="line">	int temp;</span><br><span class="line">	bool sign &#x3D; false;</span><br><span class="line">	while (cin &gt;&gt; temp) &#123;</span><br><span class="line">		Node* newNode &#x3D; new Node(temp);</span><br><span class="line">		if (!sign&amp;&amp;temp &#x3D;&#x3D; 0) &#123;</span><br><span class="line">			enterNode &#x3D; newNode;</span><br><span class="line">			sign &#x3D; true;</span><br><span class="line">		&#125;</span><br><span class="line">		newNode-&gt;next &#x3D; ptr-&gt;next;</span><br><span class="line">		ptr-&gt;next &#x3D; newNode;</span><br><span class="line">		ptr &#x3D; newNode;</span><br><span class="line">		cout &lt;&lt; &quot;Please input a number(0 to entry node, q to quit): &quot;;</span><br><span class="line">	&#125;</span><br><span class="line">	if(sign) ptr-&gt;next &#x3D; enterNode;</span><br><span class="line">	return head-&gt;next;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;判断是否有环</span><br><span class="line">bool IsLoop(Node* head) &#123;</span><br><span class="line">	if (head &#x3D;&#x3D; nullptr || head-&gt;next &#x3D;&#x3D; nullptr) return false;</span><br><span class="line">	Node* low &#x3D; head-&gt;next;</span><br><span class="line">	Node* fast &#x3D; head-&gt;next-&gt;next;</span><br><span class="line">	while (fast !&#x3D; nullptr &amp;&amp; fast-&gt;next !&#x3D; nullptr &amp;&amp; fast !&#x3D; low) &#123;</span><br><span class="line">		fast &#x3D; fast-&gt;next-&gt;next;</span><br><span class="line">		low &#x3D; low-&gt;next;</span><br><span class="line">	&#125;</span><br><span class="line">	if (fast &#x3D;&#x3D; low) return true;</span><br><span class="line">	else return false;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;找到环入口</span><br><span class="line">Node* findEnterVal(Node* head) &#123;</span><br><span class="line">	if (head &#x3D;&#x3D; nullptr || head-&gt;next &#x3D;&#x3D; nullptr) return nullptr;</span><br><span class="line">	Node* low &#x3D; head-&gt;next;</span><br><span class="line">	Node* fast &#x3D; head-&gt;next-&gt;next;</span><br><span class="line">	while (fast !&#x3D; nullptr &amp;&amp; fast-&gt;next !&#x3D; nullptr &amp;&amp; fast !&#x3D; low) &#123;</span><br><span class="line">		fast &#x3D; fast-&gt;next-&gt;next;</span><br><span class="line">		low &#x3D; low-&gt;next;</span><br><span class="line">	&#125;</span><br><span class="line">	if (fast &#x3D;&#x3D; low) &#123;</span><br><span class="line">		low &#x3D; head;</span><br><span class="line">		while (low !&#x3D; fast) &#123;</span><br><span class="line">			low &#x3D; low-&gt;next;</span><br><span class="line">			fast &#x3D; fast-&gt;next;</span><br><span class="line">		&#125;</span><br><span class="line">		return low;</span><br><span class="line">	&#125;</span><br><span class="line">	else return nullptr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;计算环长度</span><br><span class="line">int LoopLength(Node* head) &#123;</span><br><span class="line">	if (!IsLoop(head)) return 0;</span><br><span class="line">	Node* enterNode &#x3D; findEnterVal(head);</span><br><span class="line">	Node* ptr &#x3D; enterNode-&gt;next;</span><br><span class="line">	int count &#x3D; 1;</span><br><span class="line">	while (ptr !&#x3D; enterNode) &#123;</span><br><span class="line">		count++;</span><br><span class="line">		ptr &#x3D; ptr-&gt;next;</span><br><span class="line">	&#125;</span><br><span class="line">	return count;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">	Node* head &#x3D; CreatCircularList();</span><br><span class="line">	cout &lt;&lt; &quot;#1 If there is a cycle in it: &quot; &lt;&lt; IsLoop(head) &lt;&lt; endl;</span><br><span class="line">	Node* temp &#x3D; findEnterVal(head);</span><br><span class="line">	if (temp !&#x3D; nullptr)</span><br><span class="line">		cout &lt;&lt; &quot;#2 Enter node value: &quot; &lt;&lt; findEnterVal(head)-&gt;val &lt;&lt; endl;</span><br><span class="line">	else</span><br><span class="line">		cout &lt;&lt; &quot;#2 List is not a cycle!&quot; &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; &quot;#3 Loop length: &quot; &lt;&lt; LoopLength(head) &lt;&lt; endl;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/03/%E9%93%BE%E8%A1%A8%E6%9C%89%E7%8E%AF%E9%97%AE%E9%A2%98/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-合并两个有序数组" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -837,11 +931,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
               </li>
              
               <li class="article-tag-list-item">
