@@ -130,6 +130,88 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-对于微服务的理解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/19/%E5%AF%B9%E4%BA%8E%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%9A%84%E7%90%86%E8%A7%A3/">对于微服务的理解</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/19/%E5%AF%B9%E4%BA%8E%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%9A%84%E7%90%86%E8%A7%A3/" class="archive-article-date">
+  	<time datetime="2020-07-19T02:29:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>随着现在现在的应用程序越来越大，多个团队协同开发一个单体应用程序会变得越来越困难、越来越复杂，假设某个团队需要修改接口，那么其他团队与之对应的代码也需要修改，同时整个应用程序都需要重新构建、测试、部署。</p>
+<p>微服务架构就是为了解决上述问题而生的，它的本质在于分布式、去中心化。简单理解就是<strong>分解应用程序</strong>的功能，<strong>把一个大型服务拆分成很多小服务，使它们完全彼此独立，并且可以相互通信</strong></p>
+<p><img src="https://images2018.cnblogs.com/blog/1428026/201806/1428026-20180627155226400-2110957179.png" alt="img"></p>
+<p><strong>微服务的优点：</strong></p>
+<p>将应用程序分解为不同的更小的服务的好处是，它改进了模块化，使应用程序更容易理解、开发、测试，并且更能抵御体系结构的侵蚀。它还通过允许小型自治团队开发和部署来并行化开发。简单来说，微服务架构基本符合我们拆解问题的方式：把一个复杂问题拆成多个简单的问题，但微服务的拆解是基于业务模块的，微服务具有以下特征：</p>
+<p>1、这里的独立性指的是各个服务的开发、测试、部署都相互独立，比如用户服务就可以拆分作为一个单独的服务，而它的开发也不用依赖于其他服务，如果用户量很大，我们可以很容易的对其进行负载。</p>
+<p>2、当一个新需求出现时，特别是在一个庞大的项目系统中，你得去考虑各方的问题，兼容性、影响度等等，而使用微服务则可以直接跳过这些废时又烧脑的环节。</p>
+<p>3、在传统的项目开发中，基本上一个大项目都是基于同一语言的技术架构来开发的，这种方式对项目的开发有很多限制 。而使用微服务将项目进行拆分之后，各服务之间就消除了这个限制，只需要保证对外提供的接口正常可用，至于使用什么语言、什么框架通通不用关心。</p>
+<p>现在很多团队甚至强行为了微服务而去微服务，最终形成一个大型的分布式单体应用，就是改造后的系统既没有微服务的快速扩容，灵活发布的特性，也让原本的单体应用失去了方便开发，部署容易的特性（项目拆为多份，开发部署复杂度都提高了），不得不说是得不偿失。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">行业</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/19/%E5%AF%B9%E4%BA%8E%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%9A%84%E7%90%86%E8%A7%A3/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-链表有环问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1005,19 +1087,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">技术</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+                <a href="javascript:void(0)" class="js-tag color3">技术</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">行业</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
