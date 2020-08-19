@@ -130,6 +130,136 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-软件的生命周期" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/19/%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">软件的生命周期</a>
+    </h1>
+  
+
+        
+        <a href="/2020/08/19/%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" class="archive-article-date">
+  	<time datetime="2020-08-19T09:20:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="软件生命周期"><a href="#软件生命周期" class="headerlink" title="软件生命周期"></a>软件生命周期</h1><p>软件生命周期是指软件从开始研制到最终被废弃所经历的各个阶段。在不同的阶段里，由不同的组织和人员执行不同的任务，需要消耗不同的资源。</p>
+<p>生命周期常见的有：瀑布模型、V模型、敏捷开发模型。</p>
+<p>阶段：<strong>需求分析-&gt;软件设计-&gt;程序编码-&gt;软件测试-&gt;运行维护</strong></p>
+<p><strong>1.1瀑布模型</strong></p>
+<p>瀑布模型是将软件生存周期的各项活动规定为按固定顺序而连接的若干阶段工作，包括问题定义及规划、需求分析、软件设计、程序编码、软件测试和运行维护等六个基本活动，并且规定了他们自上而下，相互衔接的固定次序，形如瀑布流水，逐级下落，具有顺序性和依赖性，最终得到软件产品。</p>
+<p>因此，如果有信息未被覆盖或者发现了问题，那么最好 “返回”上一个阶段并进行适当的修改，项目开发进程从一个阶段“流动”到下一个阶段，这也是瀑布模型名称的由来。</p>
+<p>包括软件工程开发、企业项目开发、产品生产以及市场销售等构造瀑布模型。</p>
+<p><img src="/img/ruanjianceshiliucheng.png" alt=""></p>
+<p>每个阶段规定的文档需进行评审，评审完后才可以进入下一个阶段。</p>
+<p><strong>优点：</strong></p>
+<p>1）为项目提供按阶段划分的检查点</p>
+<p>2）当前一阶段完成后，你只需要关注后一阶段</p>
+<p>3）可在迭代模型中应用瀑布模型</p>
+<p>4）提供一个模板，这个模板使得分析，设计，编码，测试和支持的方法可以在该模板下有一个共同的指导</p>
+<p><strong>缺点：</strong></p>
+<p>1）各个阶段的划分完全固定，阶段之间产生大量的文档，极大地增加了工作量。</p>
+<p>2）由于开发模型是线性的，用户只有等到整个过程的末期才能见到开发成果，从而增加了开发风险。</p>
+<p>3）通过过多的强制完成日期和里程碑来跟踪各个项目阶段。</p>
+<p>4）瀑布模型的突出缺点是不适应用户需求的变化。</p>
+<p><strong>1.2V模型</strong></p>
+<p>通过开发和测试同时进行的方式来缩短开发周期，提高开发效率。其形状像一个字母A，故称为V模型。</p>
+<p><img src="/img/vmoxin.png" alt=""></p>
+<p><strong>对应关系：</strong></p>
+<p>一般来讲：单元测试所对应的是详细设计环节，也就是说，单元测试的测试用例是和详细设计一起出现的，在研发人员做详细设计的时候，相应的测试人员也就把测试用例写了出来；集成测试对应概要设计，在做模块功能分析及模块接口，数据传输方法的时候，就把集成测试用例根据概要设计中模块功能及接口等实现方法编写出来，以备以后作集成测试的时候可以直接引用；而系统测试，就是根据需求分析而来，在系统分析人员作系统分析，编写需求说明书的时候测试人员就根据客户需求说明书，把最后能实现系统功能的各种测试用例写出来，为做最后系统测试作准备。验收测试与用户需求对应，是非设计流程。</p>
+<p><strong>适用范围：</strong></p>
+<p>V模式是一种传统软件开发模型，一般适用于一些传统信息系统应用的开发，而一些高性能高风险的系统、互联网软件，或一个系统难以被具体模块化的时候，就比较难做成V模式所需的各种构件，需要更强调迭代的开发模型或者敏捷开发模型。</p>
+<p><strong>1.3敏捷开发模型</strong></p>
+<p>是一种以用户需求进化为核心（强调沟通、弱化文档）、迭代、循序渐进的开发方法。强调以人为本，专注于交付对客户有价值的软件。是一个用于开发和维持复杂产品的框架。就是把一个大项目分为多个相互联系，但也可以独立运行的小项目，并分别完成，在此过程中软件一直处于可使用状态。<br><img src="/img/mingjiekaifamoxin.png" alt=""></p>
+<p><strong>1.3.1敏捷开发的流程</strong></p>
+<p>1）产品负责人将整个产品设计成产品代办列表。就是一个个需求列表。（可以理解为需求或者要做的事情）</p>
+<p>2）召开产品迭代计划会议，确定哪些需求是需要在第一个迭代中完成的，评估迭代的时间（建议是2-4周），得到相应的迭代周期任务列表。</p>
+<p>   PS:提前发布功能需求列表，会议提倡所有团队人员参与</p>
+<p>3）把迭代的功能需求写在纸条上贴在任务墙，让大家（自主认领）认领分配。（任务墙就是把未完成、进行中、已完成的工作状态贴到一个墙上，这样大家都可以看到任务的状态）</p>
+<ul>
+<li><p>举行每日站立会议，让大家在每日会议上总结昨天做的事情，遇到什么困难，今天开展什么任务。（每日站立会议，是在每天早上定时和大家在任务墙前站立讨论，时间控制在15分钟内）</p>
+</li>
+<li><p>绘制燃尽图，保证任务的概况能够清晰看到。（燃尽图把当前的任务总数和日期一起绘制，每天记录一下，可以看到每天还剩多少个任务，直到任务数为0，这个迭代就完成了)</p>
+<p> PS:在开发人员开始开发一个任务时，需要找来对应的测试人员讲解该任务功能，以便测试人员有一致的理解，并且一开始就进行测试用例，自动化系统测试脚本的开发（若需要自动化测试的话）。</p>
+</li>
+</ul>
+<p>4）评审会议是在迭代完成时举行，要向客户演示自己完成的软件产品，并获得客户的反馈。</p>
+<p>PS:很多用户对软件开发是没有概念的，他只知道自己有某种需求。所以就要通过不断的让用户看到产品的模型，这个过程用户才会逐步的对产品产生概念。</p>
+<p>5）最后是总结会议，以轮流发言方式进行，每个人都要发言，总结好的实践和教训，并落实到后续的开发中。不要流于形式。</p>
+<p><strong>1.3.2.敏捷开发适用原则</strong></p>
+<p>1、个人与互动：重于流程与工具</p>
+<p>—-强调人与人的沟通，所以尽可能要集中化办公。异地开发模式容易让人疲惫</p>
+<p>   个人技能要提高。尤其对于架构师要求很高。</p>
+<p>   管理者要多参与项目有关的事情。</p>
+<p>   减少对开发人员的干扰，问题集中整理问。</p>
+<p>2、可用的软件：重于详尽的文件</p>
+<p>—-强调文档的作用。必要的文档是必须的，具有传承性。</p>
+<p>3、与客户合作：重于合约协商</p>
+<p>—-做好客户引导。客户都是想在尽可能短的时间内，交付尽可能多的功能。</p>
+<p>4、回应变化：重于遵循计划</p>
+<p>—-无理变化，举棋不定的结果，并不是说都需要及时响应，会导致很多浪费。</p>
+<p><strong>二、笔试题</strong></p>
+<p>1、生命周期模型包括哪些阶段？你们公司的开发模型是什么？</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">软件测试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/19/%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-对于微服务的理解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -937,84 +1067,6 @@
 
 
   
-    <article id="post-hexo博客搭建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/20/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">“hexo博客搭建”</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/20/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="archive-article-date">
-  	<time datetime="2019-07-20T05:15:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>心血来潮，想搭建一个自己的博客记录生活和学习</p>
-<p>博客框架HEXO</p>
-<p><a href="https://hexo.io/zh-cn/docs/setup" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/setup</a></p>
-<p>搭建视频教程</p>
-<p><a href="https://www.bilibili.com/video/BV1Yb411a7ty?from=search&amp;seid=17384461928582278444" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1Yb411a7ty?from=search&amp;seid=17384461928582278444</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/20/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1104,11 +1156,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1116,11 +1168,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+                <a href="javascript:void(0)" class="js-tag color5">软件测试</a>
               </li>
              
               <li class="article-tag-list-item">
